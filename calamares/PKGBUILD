@@ -1,0 +1,19 @@
+pkgname="calamares"
+pkgdesc="Calamares"
+pkgver="3.2.44.2"
+pkgrel=1
+arch=('any')
+license=('GPL')
+depends=('autoconf' 'automake' 'bison' 'flex' 'git' 'libtool' 'm4' 'cmake' 'extra-cmake-modules' 'binutils' 'fakeroot' 'gcc-multilib' 'gcc-libs-multilib' 'boost' 'patch' 'qt5-tools' 'yaml-cpp' 'kiconthemes' 'kservice' 'kio' 'kparts' 'ack' 'kpmcore' 'kcoreaddons' 'qt5-webengine')
+source=('https://github.com/calamares/calamares/releases/download/v3.2.44.2/calamares-3.2.44.2.tar.gz')
+
+sha256sums=("SKIP")
+
+package() {
+	cd $pkgname-$pkgver
+	mkdir build
+	cd build
+	cmake -DCMAKE_BUILD_TYPE=Debug ..
+	make DESTDIR="$pkgdir/" install
+}
+

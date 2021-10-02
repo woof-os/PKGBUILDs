@@ -1,0 +1,18 @@
+pkgname="woof-extra-utils"
+pkgdesc="Extra shell utilities for Woof OS"
+pkgver="1.0.0"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('bash' 'zsh' 'sh')
+source=('https://github.com/woof-os/other-scripts/archive/refs/tags/v1.0.0.tar.gz')
+
+sha256sums=("SKIP")
+
+package() {
+	cd other-scripts-$pkgver
+	for x in `find . -maxdepth 1 -not -type d`; do
+		install -Dm755 $x $pkgdir/usr/local/bin/$x
+	done
+}
+

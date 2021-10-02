@@ -1,0 +1,16 @@
+pkgname="woof-fetch-walls"
+pkgver=1.0.1
+pkgrel=1
+pkgdesc=""
+arch=("any")
+
+source=("https://github.com/ACuteWoof/fetch-walls/archive/refs/tags/v1.0.1.tar.gz")
+sha256sums=("SKIP")
+
+package() {
+	cd fetch-walls-$pkgver
+
+        install -Dm755 main.py $pkgdir/usr/bin/woof-fetch-walls
+
+	install -Dm755 woof-fetch-walls.desktop $pkgdir/usr/share/applications/woof-fetch-walls.desktop
+}

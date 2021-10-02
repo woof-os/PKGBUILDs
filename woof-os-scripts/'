@@ -1,0 +1,16 @@
+pkgname="woof-scripts"
+pkgdesc="Small shell scripts for Woof OS"
+pkgver="1.0.0"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('sh')
+source=('https://github.com/woof-os/woof-scripts/archive/refs/tags/v1.0.0.tar.gz')
+
+sha256sums=("SKIP")
+
+package() {
+	mkdir -p $pkgdir/usr/local/bin/
+	cp -r *useful-scripts*/* $pkgdir/usr/local/bin/
+}
+

@@ -1,0 +1,19 @@
+pkgname="woof-dunst-config"
+pkgdesc="Woof's Dunst configuration files for Woof OS"
+pkgver="1.0.0"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('dunst')
+source=('https://github.com/woof-os/dunst/archive/refs/tags/v1.0.0.tar.gz')
+
+sha256sums=("SKIP")
+
+package() {
+	mkdir -p $pkgdir/etc/skel/.config/dunst
+	cd dunst-$pkgver
+	for x in `find . -maxdepth 1 -not -type d`; do
+		install -Dm755 $x $pkgdir/etc/skel/.config/dunst/$x
+	done
+}
+

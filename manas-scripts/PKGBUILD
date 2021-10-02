@@ -1,0 +1,19 @@
+pkgname="woof-fun-utils"
+pkgdesc="Some fun utilities provided by contributors outside github.com/woof-os"
+pkgver="1.1.0"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('bash')
+source=('https://github.com/Manas140/sh/archive/refs/heads/main.zip')
+
+sha256sums=("SKIP")
+
+package() {
+	cd *sh*
+	scripts=$(ls --hide 'LICENSE' --hide '*.*')
+	for script in $scripts; do
+	   install -Dm755 $script $pkgdir/usr/local/bin/$script || install -dDm755 $script $pkgdir/usr/local/bin/$script 
+	done
+}
+

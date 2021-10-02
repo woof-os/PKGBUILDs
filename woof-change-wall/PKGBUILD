@@ -1,0 +1,17 @@
+pkgname="woof-change-wall"
+pkgver=1.0.1
+pkgrel=1
+pkgdesc=""
+arch=("any")
+
+url="https://acutewoof.github.io/wallpaper-changer"
+source=("https://github.com/ACuteWoof/wallpaper-changer/archive/refs/tags/woof-os-apps-makepgk.tar.gz")
+sha256sums=("SKIP")
+
+package() {
+	cd *wallpaper* 
+
+        install -Dm755 woofchangewall.py $pkgdir/usr/bin/woof-change-wall
+
+	install -Dm755 woof-change-wall.desktop $pkgdir/usr/share/applications/woof-change-wall.desktop
+}

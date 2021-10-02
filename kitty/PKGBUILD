@@ -1,0 +1,18 @@
+pkgname="woof-kitty-config"
+pkgdesc="Woof's Kitty terminal emulator configuration files for Woof OS"
+pkgver="1.0.0"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('kitty')
+source=('https://github.com/woof-os/kitty/archive/refs/tags/v1.0.0.tar.gz')
+
+sha256sums=("SKIP")
+
+package() {
+	cd kitty-$pkgver
+	for x in `find . -maxdepth 1 -not -type d`; do
+		install -Dm755 $x $pkgdir/etc/skel/.config/kitty/$x
+	done
+}
+
