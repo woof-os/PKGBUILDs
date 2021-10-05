@@ -4,7 +4,7 @@ pkgver="3.2.44.2"
 pkgrel=1
 arch=('any')
 license=('GPL')
-depends=('autoconf' 'automake' 'bison' 'flex' 'git' 'libtool' 'm4' 'cmake' 'extra-cmake-modules' 'binutils' 'fakeroot' 'gcc-multilib' 'gcc-libs-multilib' 'boost' 'patch' 'qt5-tools' 'yaml-cpp' 'kiconthemes' 'kservice' 'kio' 'kparts' 'ack' 'kpmcore' 'kcoreaddons' 'qt5-webengine')
+depends=('autoconf' 'automake' 'bison' 'flex' 'git' 'libtool' 'm4' 'cmake' 'extra-cmake-modules' 'binutils' 'fakeroot' 'gcc-multilib' 'gcc' 'gcc-libs-multilib' 'boost' 'patch' 'qt5-tools' 'yaml-cpp' 'kiconthemes' 'kservice' 'kio' 'kparts' 'ack' 'kpmcore' 'kcoreaddons' 'qt5-webengine' 'qt5-location' 'icu' 'qt5-declarative' 'qt5-translations' 'qt5-xmlpatterns' 'libpwquality')
 source=('https://github.com/calamares/calamares/releases/download/v3.2.44.2/calamares-3.2.44.2.tar.gz')
 
 sha256sums=("SKIP")

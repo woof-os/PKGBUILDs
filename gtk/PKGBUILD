@@ -1,17 +1,16 @@
 pkgname="woof-gtk-config"
 pkgdesc="Woof's GTK configuration files for Woof OS"
-pkgver="1.0.0"
+pkgver="1.1.0"
 pkgrel=1
 arch=('any')
 license=('MIT')
 depends=('papirus-icon-theme' 'arc-gtk-theme' 'cantarell-fonts' 'breeze')
-source=('https://github.com/woof-os/gtk/archive/refs/tags/v1.0.0.tar.gz')
+source=('https://github.com/woof-os/gtk/archive/refs/tags/v1.1.0.tar.gz')
 
 sha256sums=("SKIP")
 
 package() {
 	cd gtk-$pkgver
-	install -dDm755 "gtk-3.0" "$pkgdir/etc/skel/.config/gtk-3.0/"
-	install -dDm755 "gtk-2.0" "$pkgdir/etc/skel/.config/gtk-3.0/"
+	install -Dm755 "gtk-3.0" "$pkgdir/etc/skel/.config/gtk-3.0/settings.ini"
 }
 
