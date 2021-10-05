@@ -11,6 +11,6 @@ sha256sums=("SKIP")
 
 package() {
 	cd gtk-$pkgver
-	install -Dm755 "gtk-3.0" "$pkgdir/etc/skel/.config/gtk-3.0/settings.ini"
+	install -Dm755 "gtk-3.0/settings.ini" "$pkgdir/etc/skel/.config/gtk-3.0/settings.ini"
 }
 
