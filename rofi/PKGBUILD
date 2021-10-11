@@ -1,11 +1,11 @@
 pkgname="woof-rofi-config"
 pkgdesc="Woof's Rofi configuration files for Woof OS"
-pkgver="1.0.0"
+pkgver="2.0.0"
 pkgrel=1
 arch=('any')
 license=('MIT')
 depends=('rofi')
-source=('https://github.com/woof-os/rofi/archive/refs/tags/v1.0.0.tar.gz')
+source=('https://github.com/woof-os/rofi/archive/refs/tags/v2.0.0.tar.gz')
 
 sha256sums=("SKIP")
 

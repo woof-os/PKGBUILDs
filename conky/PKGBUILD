@@ -1,11 +1,11 @@
 pkgname="woof-conky-config"
 pkgdesc="Woof's Conky configuration files for Woof OS"
-pkgver="1.2.0"
+pkgver="2.0.0"
 pkgrel=1
 arch=('any')
 license=('MIT')
 depends=('conky')
-source=('https://github.com/woof-os/conky/archive/refs/tags/v1.2.0.tar.gz')
+source=('https://github.com/woof-os/conky/archive/refs/tags/v2.0.0.tar.gz')
 
 sha256sums=("SKIP")
 

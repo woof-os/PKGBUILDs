@@ -12,6 +12,6 @@ sha256sums=("SKIP")
 package() {
 	cd vim-$pkgver
 	install -Dm755 .vimrc $pkgdir/etc/skel/.vimrc
-	install -dDm755 .vim $pkgdir/etc/skel/.vim
+	cp -r .vim $pkgdir/etc/skel/.vim
 }
 
