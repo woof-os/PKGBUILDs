@@ -1,0 +1,16 @@
+pkgname="woof-qt5-config"
+pkgdesc="Woof's Qt5 configuration files for Woof OS"
+pkgver="1.0.0"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('qt5-base' 'qt5ct' 'kvantum-qt5')
+source=('https://github.com/woof-os/qt5/archive/refs/tags/v1.0.0.zip')
+
+sha256sums=("SKIP")
+
+package() {
+    cd qt5-$pkgver
+    install -Dm755 qt5ct/qt5ct.conf $pkgdir/etc/skel/.config/qt5ct/qt5ct.conf 
+    install -Dm755 Kvantum/kvantum.kvconfig $pkgdir/etc/skel/.config/Kvantum/kvantum.kvconfig
+}

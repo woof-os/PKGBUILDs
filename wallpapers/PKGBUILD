@@ -1,0 +1,19 @@
+pkgname="woof-wallpapers"
+pkgdesc="Wallpapers for Woof OS"
+pkgver="1.2.0"
+pkgrel=1
+arch=('any')
+license=('custom:CC BY 2.0')
+depends=('dunst')
+source=('https://github.com/woof-os/wallpapers/archive/refs/tags/v1.2.0.tar.gz')
+
+sha256sums=("SKIP")
+
+package() {
+	cd wallpapers-$pkgver
+	for x in `\ls`; do
+		install -Dm755 $x $pkgdir/etc/woofos/$x
+		install -Dm755 $x $pkgdir/etc/skel/Pictures/wallpapers/default/$x
+	done
+}
+
