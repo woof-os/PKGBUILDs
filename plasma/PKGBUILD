@@ -1,18 +1,44 @@
 pkgname="woof-plasma-config"
 pkgdesc="Woof's KDE Plasma configuration files for Woof OS"
-pkgver="2.0.0"
+pkgver="2.1.0"
 pkgrel=1
 arch=('any')
+depends=('qogir-icon-theme-git')
 license=('MIT')
-source=('https://github.com/woof-os/plasma/archive/refs/tags/v2.0.0.tar.gz')
+source=('https://github.com/woof-os/plasma/archive/refs/tags/v2.1.0.tar.gz')
 
 sha256sums=("SKIP")
 
 package() {
 	cd plasma-$pkgver
-	echo "$(find . -type f -mtime -14 | sed 's|^./||')"| while read -r i
+	echo "$(find . -maxdepth 1 -type f -mtime -14 | sed 's|^./||')"| while read -r i
 	do
 		install -Dm755 "$i" "$pkgdir/etc/skel/.config/$i"
 	done
+
+	cd Plasma-Style
+	echo "$(find . -type f -mtime -14 | sed 's|^./||')"| while read -r i
+	do
+		install -Dm755 "$i" "$pkgdir/etc/skel/.local/share/plasma/desktoptheme/$i"
+	done
+	cd ../
+	cd plasmoids
+	echo "$(find . -type f -mtime -14 | sed 's|^./||')"| while read -r i
+	do
+		install -Dm755 "$i" "$pkgdir/etc/skel/.local/share/plasma/plasmoids/$i"
+	done
+	cd ../
+	cd latte
+	echo "$(find . -type f -mtime -14 | sed 's|^./||')"| while read -r i
+	do
+		install -Dm755 "$i" "$pkgdir/etc/skel/.config/latte/$i"
+	done
+	cd ../
+	cd Nordic
+	echo "$(find . -type f -mtime -14 | sed 's|^./||')"| while read -r i
+	do
+		install -Dm755 "$i" "$pkgdir/etc/skel/.config/Nordic/$i"
+	done
+	
 }
 
