@@ -10,8 +10,9 @@ sha256sums=("SKIP")
 
 package() {
 	cd plasma-$pkgver
-	for i in *; do
-		install -Dm755 $i $pkgdir/etc/skel/.config/$i
+	echo "$(find . -type f -mtime -14 | sed 's|^./||')"| while read -r i
+	do
+		install -Dm755 "$i" "$pkgdir/etc/skel/.config/$i"
 	done
 }
 
