@@ -1,0 +1,17 @@
+pkgname="woof-plasma-config"
+pkgdesc="Woof's KDE Plasma configuration files for Woof OS"
+pkgver="2.0.0"
+pkgrel=1
+arch=('any')
+license=('MIT')
+source=('https://github.com/woof-os/plasma/archive/refs/tags/v2.0.0.tar.gz')
+
+sha256sums=("SKIP")
+
+package() {
+	cd plasma-$pkgver
+	for i in *; do
+		install -Dm755 $i $pkgdir/etc/skel/.config/$i
+	done
+}
+
