@@ -1,16 +1,17 @@
 pkgname="woof-picom-config"
 pkgdesc="Woof's Picom configuration files for Woof OS"
-pkgver="1.0.0"
+pkgver="1.0.1"
 pkgrel=1
 arch=('any')
 license=('MIT')
-depends=('picom-ibhagwan-git')
+depends=('picom')
+srcver="1.0.0"
 source=('https://github.com/woof-os/picom/archive/refs/tags/v1.0.0.tar.gz')
 
 sha256sums=("SKIP")
 
 package() {
-	cd picom-$pkgver
+	cd picom-$srcver
 	install -Dm755 picom.conf $pkgdir/etc/skel/.config/picom/picom.conf
 }
 
