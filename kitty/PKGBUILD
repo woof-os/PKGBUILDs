@@ -1,11 +1,11 @@
 pkgname="woof-kitty-config"
 pkgdesc="Woof's Kitty terminal emulator configuration files for Woof OS"
-pkgver="2.0.0"
+pkgver="4.0.0"
 pkgrel=1
 arch=('any')
 license=('MIT')
 depends=('kitty')
-source=('https://github.com/woof-os/kitty/archive/refs/tags/v2.0.0.tar.gz')
+source=('https://github.com/woof-os/kitty/archive/refs/tags/v4.0.0.tar.gz')
 
 sha256sums=("SKIP")
 
