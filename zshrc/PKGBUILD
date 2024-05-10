@@ -1,0 +1,18 @@
+pkgname="woof-zsh-config"
+pkgdesc="Woof's zsh configuration files for Woof OS"
+pkgver="1.0.1"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('zsh' 'zsh-autosuggestions' 'starship' 'woof-starship-config')
+source=('https://github.com/woof-os/zshrc/archive/refs/tags/v1.0.1.tar.gz')
+
+sha256sums=("SKIP")
+
+package() {
+	cd zshrc-$pkgver
+	for x in `find . -maxdepth 1 -not -type d`; do
+		install -Dm755 $x $pkgdir/etc/skel/$x
+	done
+}
+
