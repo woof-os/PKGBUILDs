@@ -1,0 +1,18 @@
+pkgname="woof-alacritty-config"
+pkgdesc="Woof's Alacritty terminal emulator configuration files for Woof OS"
+pkgver="1.0.0"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('alacritty')
+source=('https://github.com/woof-os/alacritty/archive/refs/tags/v1.0.0.tar.gz')
+
+sha256sums=("SKIP")
+
+package() {
+	cd alacritty-$pkgver
+	for x in `find . -maxdepth 1 -not -type d`; do
+		install -Dm755 $x $pkgdir/etc/skel/.config/alacritty/$x
+	done
+}
+
