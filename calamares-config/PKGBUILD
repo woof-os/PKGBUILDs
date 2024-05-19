@@ -1,11 +1,11 @@
 pkgname="woof-calamares-config"
 pkgdesc="Woof's Calamares configuration files for Woof OS"
-pkgver="2.3.1"
+pkgver="2.4.1"
 pkgrel=1
 arch=('any')
 license=('MIT')
 depends=('calamares')
-source=('https://github.com/woof-os/calamares/archive/refs/tags/v2.3.1.tar.gz')
+source=('https://github.com/woof-os/calamares/archive/refs/tags/v2.4.1.tar.gz')
 
 sha256sums=("SKIP")
 
