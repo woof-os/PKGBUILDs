@@ -1,17 +1,17 @@
-pkgname="woof-sway-config"
-pkgdesc="Sora's Sway configuration files for Woof OS"
+pkgname="woof-sway-waybar-config"
+pkgdesc="Akirapearl's Sway configuration files for Woof OS"
 pkgver="1.0.0"
 pkgrel=1
 arch=('any')
-url="https://acutewoof.github.io/qtile"
+url="https://github.com/woof-os/sway-waybar-akirapearl"
 license=('MIT')
-depends=('sway' 'waybar')
-source=('https://github.com/woof-os/sway/archive/refs/tags/v1.0.0.zip')
+depends=('sway' 'waybar' 'swaylock' 'swayidle' 'swaybg')
+source=('https://github.com/woof-os/sway-waybar-akirapearl/archive/refs/tags/v1.0.0.zip')
 
 sha256sums=("SKIP")
 
 package() {
-	cd sway-$pkgver
+	cd sway-waybar-akirapearl-$pkgver
 	install -Dm755 sway/config $pkgdir/etc/skel/.config/sway/config
 	install -Dm755 waybar/config $pkgdir/etc/skel/.config/waybar/config
 	install -Dm755 waybar/style.css $pkgdir/etc/skel/.config/waybar/style.css

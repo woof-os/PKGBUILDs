@@ -1,0 +1,17 @@
+pkgname="rofi-power-menu"
+pkgdesc="Configurable power meny mode for rofi and dmenu"
+realver="1.0.0"
+pkgver="$realver"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('qtile')
+source=('https://github.com/woof-os/rofi-power-menu/archive/refs/tags/v1.0.0.tar.gz')
+
+sha256sums=("SKIP")
+
+package() {
+	cd $pkgname-$realver
+	install -Dm755 rofi-power-menu $pkgdir/usr/bin/rofi-power-menu
+}
+
