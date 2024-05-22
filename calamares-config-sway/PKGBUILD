@@ -1,16 +1,17 @@
 pkgname="woof-calamares-config-sway"
 pkgdesc="Woof's Calamares configuration files for Woof OS Sway edition"
-pkgver="1.0.0"
+_realver="1.2.0"
+pkgver="$_realver.2"
 pkgrel=1
 arch=('any')
 license=('MIT')
 depends=('calamares')
-source=('https://github.com/woof-os/calamares/archive/refs/tags/v1.0.0.tar.gz')
+source=('https://github.com/woof-os/calamares-sway/archive/refs/tags/v1.2.0.tar.gz')
 
 sha256sums=("SKIP")
 
 package() {
-	cd calamares-$pkgver
+	cd calamares-sway-$_realver
 	for x in `find . -not -type d`; do
 		install -Dm755 $x $pkgdir/etc/calamares/$x
 	done

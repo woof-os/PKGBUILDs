@@ -3,7 +3,8 @@
 
 _pkgname="calamares"
 pkgname="$_pkgname-bin"
-pkgver=3.3.6
+_realver=3.3.6
+pkgver="$_realver.1"
 pkgrel=1
 pkgdesc="Distribution-independent installer framework"
 url="https://github.com/calamares/calamares"
@@ -38,7 +39,7 @@ makedepends=(
   'qt6-translations'
 )
 
-provides=("$_pkgname=${pkgver}")
+provides=("$_pkgname=${_realver}")
 conflicts=("$_pkgname")
 
 backup=(
@@ -48,7 +49,7 @@ backup=(
   #'usr/share/calamares/modules/unpackfs.conf'
 )
 
-_pkgsrc="$_pkgname-$pkgver"
+_pkgsrc="$_pkgname-$_realver"
 source=(
   "https://github.com/calamares/calamares/releases/download/v3.3.6/calamares-3.3.6.tar.gz"
 )
