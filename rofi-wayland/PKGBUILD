@@ -1,0 +1,18 @@
+pkgname="woof-rofi-config-wayland"
+pkgdesc="Woof's Rofi configuration files for Woof OS' Wayland based editions"
+realver="5.0.0"
+pkgver="$realver.1"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('rofi-wayland')
+source=('https://github.com/woof-os/rofi/archive/refs/tags/v5.0.0.tar.gz')
+
+sha256sums=("SKIP")
+
+package() {
+	cd rofi-$realver
+	install -d ${pkgdir}/etc/skel/.config/rofi
+	cp -r ${srcdir}/rofi-${realver}/* ${pkgdir}/etc/skel/.config/rofi/
+}
+
