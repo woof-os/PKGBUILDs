@@ -1,12 +1,12 @@
 pkgname="woof-sway-waybar-config"
 pkgdesc="Akirapearl's Sway configuration files for Woof OS"
-pkgver="1.0.0"
+pkgver="1.2.0"
 pkgrel=1
 arch=('any')
 url="https://github.com/woof-os/sway-waybar-akirapearl"
 license=('MIT')
 depends=('sway' 'waybar' 'swaylock' 'swayidle' 'swaybg')
-source=('https://github.com/woof-os/sway-waybar-akirapearl/archive/refs/tags/v1.0.0.zip')
+source=('https://github.com/woof-os/sway-waybar-akirapearl/archive/refs/tags/v1.2.0.zip')
 
 sha256sums=("SKIP")
 
