@@ -1,6 +1,7 @@
 pkgname="woof-nvim-config"
 pkgdesc="Woof's nvim configuration files for Woof OS"
-pkgver="1.0.0"
+_realver="1.0.0"
+pkgver="$_realver.1"
 pkgrel=1
 arch=('any')
 license=('MIT')
@@ -10,9 +11,17 @@ source=('https://github.com/woof-os/nvim/archive/refs/tags/v1.0.0.tar.gz')
 sha256sums=("SKIP")
 
 package() {
-	cd nvim-$pkgver
+	cd nvim-$_realver
 	for x in `find . -not -type d`; do
 		install -Dm755 $x $pkgdir/etc/skel/.config/nvim/$x
 	done	
+	nvim -c "PackerSync"
+	cp -r ~/.local/share/nvim/site site
+	cd site
+	rm pack/packer/start/LuaSnip/tests/symlinked_data
+	for x in `find . -not -type d`; do
+		install -Dm755 $x $pkgdir/etc/skel/.local/share/nvim/site/$x
+	done
+	ln -s pack/packer/start/LuaSnip/tests/data $pkgdir/etc/skel/.local/share/nvim/site/pack/packer/start/LuaSnip/tests/symlinked_data
 }
 
