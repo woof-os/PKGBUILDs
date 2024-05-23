@@ -11,7 +11,7 @@ sha256sums=("SKIP")
 
 package() {
 	cd nvim-$pkgver
-	for $x in `find . -not -type d`; do
+	for x in `find . -not -type d`; do
 		install -Dm755 $x $pkgdir/etc/skel/.config/nvim/$x
 	done	
 }
