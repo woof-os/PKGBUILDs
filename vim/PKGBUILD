@@ -1,17 +1,18 @@
-pkgname="woof-vim-config"
-pkgdesc="Woof's vim configuration files for Woof OS"
-pkgver="2.1.0"
+pkgname="woof-nvim-config"
+pkgdesc="Woof's nvim configuration files for Woof OS"
+pkgver="1.0.0"
 pkgrel=1
 arch=('any')
 license=('MIT')
-depends=('vim')
-source=('https://github.com/woof-os/vim/archive/refs/tags/v2.1.0.tar.gz')
+depends=('neovim' 'nvim-packer-git')
+source=('https://github.com/woof-os/nvim/archive/refs/tags/v1.0.0.tar.gz')
 
 sha256sums=("SKIP")
 
 package() {
-	cd vim-$pkgver
-	install -Dm755 .vimrc $pkgdir/etc/skel/.vimrc
-	cp -r .vim $pkgdir/etc/skel/.vim
+	cd nvim-$pkgver
+	for $x in `find . -not -type d`; do
+		install -Dm755 $x $pkgdir/etc/skel/.config/nvim/$x
+	done	
 }
 
