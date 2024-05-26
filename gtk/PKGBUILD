@@ -1,11 +1,11 @@
 pkgname="woof-gtk-config"
 pkgdesc="Woof's GTK configuration files for Woof OS"
-pkgver="4.0.0"
+pkgver="4.1.0"
 pkgrel=1
 arch=('any')
 license=('MIT')
 depends=('qogir-icon-theme-git' 'gtk-engines' 'ttf-fira-sans')
-source=('https://github.com/woof-os/gtk/archive/refs/tags/v4.0.0.tar.gz')
+source=("https://github.com/woof-os/gtk/archive/refs/tags/v$pkgver.tar.gz")
 
 sha256sums=("SKIP")
 
