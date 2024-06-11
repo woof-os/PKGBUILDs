@@ -1,0 +1,22 @@
+pkgname="woof-qtile-config"
+pkgdesc="Woof's qtile configuration files for Woof OS"
+pkgver="3.5.4"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('qtile')
+source=("https://github.com/woof-os/qtile/archive/refs/tags/v$pkgver.tar.gz")
+
+sha256sums=("SKIP")
+
+package() {
+	cd qtile-$pkgver
+	for x in `find . -not -type d`; do
+		install -Dm755 $x $pkgdir/etc/skel/.config/qtile/$x
+	done
+	cd doc
+	for x in `find . -not -type d`; do
+		install -Dm755 $x $pkgdir/usr/share/doc/woofos/qtile/$x
+	done
+}
+
