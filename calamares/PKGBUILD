@@ -4,7 +4,7 @@
 _pkgname="calamares"
 pkgname="$_pkgname-bin"
 _realver=3.3.6
-pkgver="$_realver.1"
+pkgver="$_realver.2"
 pkgrel=1
 pkgdesc="Distribution-independent installer framework"
 url="https://github.com/calamares/calamares"
