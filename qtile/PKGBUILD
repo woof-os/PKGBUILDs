@@ -1,6 +1,6 @@
 pkgname="woof-qtile-config"
 pkgdesc="Woof's qtile configuration files for Woof OS"
-pkgver="3.5.4"
+pkgver="3.5.5"
 pkgrel=1
 arch=('any')
 license=('MIT')
