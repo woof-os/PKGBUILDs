@@ -1,0 +1,16 @@
+pkgname="woof-zathura-config"
+pkgdesc="Woof's zathura configuration files for Woof OS"
+pkgver="1.0.0"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('zathura')
+source=("https://github.com/woof-os/zathura/archive/refs/tags/v$pkgver.tar.gz")
+
+sha256sums=("SKIP")
+
+package() {
+	cd zathura-$pkgver
+	install -Dm755 "zathurarc" "$pkgdir/etc/skel/.config/zathura/zathurarc"
+}
+
