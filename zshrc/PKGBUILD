@@ -1,11 +1,11 @@
 pkgname="woof-zsh-config"
 pkgdesc="Woof's zsh configuration files for Woof OS"
-pkgver="1.1.0"
+pkgver="1.1.1"
 pkgrel=1
 arch=('any')
 license=('MIT')
 depends=('zsh' 'zsh-autosuggestions' 'starship' 'woof-starship-config')
-source=('https://github.com/woof-os/zshrc/archive/refs/tags/v1.1.0.tar.gz')
+source=('https://github.com/woof-os/zshrc/archive/refs/tags/v1.1.1.tar.gz')
 
 sha256sums=("SKIP")
 
