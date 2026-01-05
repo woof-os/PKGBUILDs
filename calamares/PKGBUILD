@@ -3,8 +3,7 @@
 
 _pkgname="calamares"
 pkgname="$_pkgname-bin"
-_realver=3.3.6
-pkgver="$_realver.2"
+pkgver=3.3.14.r25.g95aa33f
 pkgrel=1
 pkgdesc="Distribution-independent installer framework"
 url="https://github.com/calamares/calamares"
@@ -13,7 +12,7 @@ arch=('i686' 'x86_64')
 
 depends=(
   'boost-libs'
-  'ckbcomp'
+  'ckbcomp' # AUR
   'hwinfo'
   'kconfig'
   'kcoreaddons'
@@ -39,7 +38,7 @@ makedepends=(
   'qt6-translations'
 )
 
-provides=("$_pkgname=${_realver}")
+provides=("$_pkgname=${pkgver%%.r*}")
 conflicts=("$_pkgname")
 
 backup=(
@@ -49,18 +48,26 @@ backup=(
   #'usr/share/calamares/modules/unpackfs.conf'
 )
 
-_pkgsrc="$_pkgname-$_realver"
+_pkgsrc="$_pkgname"
 source=(
-  "https://github.com/calamares/calamares/releases/download/v3.3.6/calamares-3.3.6.tar.gz"
+  "$_pkgsrc"::"git+$url.git"
+  "yay-support.patch"
 )
 sha256sums=(
-  'ba7e8314ac45a30570597a13efc7ec79450c2df803096c941a8e9a8ffbd92eeb'
+  'SKIP'
+  'SKIP'
 )
+
+pkgver() {
+  cd "$_pkgsrc"
+  git describe --long --tags --abbrev=7 --exclude='*[a-zA-Z][a-zA-Z]*' \
+    | sed -E 's/^[^0-9]*//;s/([^-]*-g)/r\1/;s/-/./g'
+}
 
 prepare() {
   cd "$_pkgsrc"
+  git apply ../yay-support.patch
 }
-
 
 build() {
   local _skip_modules=(
@@ -82,14 +89,12 @@ build() {
     -B build
     -S "$_pkgsrc"
     -G Ninja
-
     -DCMAKE_BUILD_TYPE=Release
     -DCMAKE_INSTALL_PREFIX='/usr'
     -DCMAKE_INSTALL_LIBDIR='lib'
     -DWITH_QT6=ON
     -DINSTALL_CONFIG=ON
     -DSKIP_MODULES="${_skip_modules[*]}"
-
     -DBUILD_TESTING=OFF
     -Wno-dev
   )

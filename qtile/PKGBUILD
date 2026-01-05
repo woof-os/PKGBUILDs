@@ -1,11 +1,11 @@
 pkgname="woof-qtile-config"
 pkgdesc="Woof's qtile configuration files for Woof OS"
-pkgver="3.5.9"
+pkgver="3.5.9.1"
 pkgrel=1
 arch=('any')
 license=('MIT')
 depends=('qtile' 'xdo' 'scrot' 'lf' 'zathura')
-source=("https://github.com/woof-os/qtile/archive/refs/tags/v$pkgver.tar.gz")
+source=("https://github.com/woof-os/qtile/archive/refs/tags/v3.5.9.tar.gz")
 
 sha256sums=("SKIP")
 
