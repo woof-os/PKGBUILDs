@@ -1,0 +1,21 @@
+pkgname="woof-lf-config"
+pkgdesc="Woof's lf configuration files for Woof OS"
+pkgver="1.0.0"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('ueberzug' 'nsxiv' 'lf')
+source=("https://github.com/woof-os/lfrc/archive/refs/tags/v$pkgver.tar.gz")
+
+sha256sums=("SKIP")
+
+package() {
+	cd lfrc-$pkgver
+	install -Dm755 lfrc $pkgdir/etc/skel/.config/lf/lfrc
+	install -Dm755 scope $pkgdir/etc/skel/.config/lf/scope
+	install -Dm755 cleaner $pkgdir/etc/skel/.config/lf/cleaner
+	install -Dm755 icons $pkgdir/etc/skel/.config/lf/icons
+	install -Dm755 lfub $pkgdir/etc/skel/.local/bin/lfub
+	install -Dm755 rotdir $pkgdir/etc/skel/.local/bin/rotdir
+}
+
