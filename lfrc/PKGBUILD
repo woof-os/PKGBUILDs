@@ -15,7 +15,7 @@ package() {
 	install -Dm755 scope $pkgdir/etc/skel/.config/lf/scope
 	install -Dm755 cleaner $pkgdir/etc/skel/.config/lf/cleaner
 	install -Dm755 icons $pkgdir/etc/skel/.config/lf/icons
-	install -Dm755 lfub $pkgdir/etc/skel/.local/bin/lfub
-	install -Dm755 rotdir $pkgdir/etc/skel/.local/bin/rotdir
+	install -Dm755 lfub $pkgdir/usr/bin/lfub
+	install -Dm755 rotdir $pkgdir/usr/bin/rotdir
 }
 
