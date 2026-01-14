@@ -1,7 +1,7 @@
 pkgname="woof-lf-config"
 pkgdesc="Woof's lf configuration files for Woof OS"
 pkgver="1.0.0"
-pkgrel=2
+pkgrel=3
 arch=('any')
 license=('MIT')
 depends=('ueberzugpp' 'nsxiv' 'lf' 'gnome-epub-thumbnailer')
