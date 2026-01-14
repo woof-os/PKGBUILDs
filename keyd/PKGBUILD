@@ -1,0 +1,16 @@
+pkgname="woof-keyd-config"
+pkgdesc="Woof's keyd configuration files for Woof OS"
+pkgver="1.0.0"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('keyd')
+source=("https://github.com/woof-os/keyd-config/archive/refs/tags/v$pkgver.tar.gz")
+
+sha256sums=("SKIP")
+
+package() {
+	cd keyd-config-$pkgver
+	install -Dm755 default.conf $pkgdir/etc/keyd/default.conf
+}
+
