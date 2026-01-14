@@ -4,7 +4,7 @@ pkgver="1.0.0"
 pkgrel=2
 arch=('any')
 license=('MIT')
-depends=('ueberzug' 'nsxiv' 'lf' 'gnome-epub-thumbnailer')
+depends=('ueberzugpp' 'nsxiv' 'lf' 'gnome-epub-thumbnailer')
 source=("https://github.com/woof-os/lfrc/archive/refs/tags/v$pkgver.tar.gz")
 
 sha256sums=("SKIP")
