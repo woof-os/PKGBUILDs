@@ -1,0 +1,17 @@
+pkgname="woof-qute-config"
+pkgdesc="Woof's qutebrowser configuration files for Woof OS"
+pkgver="1.0.0"
+pkgrel=1
+arch=('any')
+license=('MIT')
+depends=('qutebrowser' 'python-adblock')
+source=("https://github.com/woof-os/qutebrowser/archive/refs/tags/v$pkgver.tar.gz")
+
+sha256sums=("SKIP")
+
+package() {
+	cd qutebrowser-$pkgver
+	for x in `find . -not -type d`; do
+		install -Dm755 $x $pkgdir/etc/skel/.config/qutebrowser/$x
+	done
+}
