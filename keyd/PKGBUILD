@@ -1,6 +1,6 @@
 pkgname="woof-keyd-config"
 pkgdesc="Woof's keyd configuration files for Woof OS"
-pkgver="1.0.0"
+pkgver="1.0.1"
 pkgrel=1
 arch=('any')
 license=('MIT')
