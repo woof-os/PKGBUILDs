@@ -1,6 +1,6 @@
 pkgname="woof-alacritty-config"
 pkgdesc="Woof's Alacritty terminal emulator configuration files for Woof OS"
-pkgver="2.0.2"
+pkgver="2.0.3"
 pkgrel=1
 arch=('any')
 license=('MIT')
