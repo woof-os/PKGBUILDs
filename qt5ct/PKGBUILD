@@ -12,5 +12,9 @@ sha256sums=("SKIP")
 package() {
     cd qt5-$pkgver
     install -Dm755 qt5ct/qt5ct.conf $pkgdir/etc/skel/.config/qt5ct/qt5ct.conf 
-    install -Dm755 Kvantum/kvantum.kvconfig $pkgdir/etc/skel/.config/Kvantum/kvantum.kvconfig
+    install -Dm755 qt6ct/qt6ct.conf $pkgdir/etc/skel/.config/qt6ct/qt6ct.conf 
+    cd Kvantum
+    for x in `find . -not -type d`; do
+    	install -Dm755 "$x" "$pkgdir/etc/skel/.config/Kvantum/$x"
+    done
 }
