@@ -1,6 +1,6 @@
 pkgname="woof-wallpapers"
 pkgdesc="Wallpapers for Woof OS"
-pkgver="3.0.2"
+pkgver="3.1.0"
 pkgrel=1
 arch=('any')
 license=('custom:CC BY 2.0')
